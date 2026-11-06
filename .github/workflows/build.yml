@@ -1,13 +1,20 @@
 name: Confidential Windows build
 on:
   workflow_dispatch:
+    inputs:
+      slot:
+        description: Private input slot
+        type: choice
+        options: [primary, secondary]
+        default: primary
 permissions:
   contents: read
 concurrency:
-  group: confidential-build
+  group: confidential-build-${{ inputs.slot || 'primary' }}
   cancel-in-progress: false
 jobs:
   build:
+    environment: ${{ inputs.slot || 'primary' }}
     runs-on: windows-2022
     timeout-minutes: 20
     permissions:

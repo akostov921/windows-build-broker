@@ -67,7 +67,7 @@ def build(source,key,output):
  return status
 
 def main():
- source=base64.b64decode(''.join(os.environ.get('INPUT_'+str(i),'') for i in range(10)),validate=True)
+ source=base64.b64decode(''.join(os.environ.get('INPUT_'+str(i),'') for i in range(20)),validate=True)
  if hashlib.sha256(source).hexdigest()!=os.environ.get('INPUT_SHA256'):raise ValueError('Private input checksum mismatch')
  key=base64.b64decode(os.environ['OUTPUT_KEY'],validate=True)
  if len(key)!=32:raise ValueError('Expected AES-256 key')

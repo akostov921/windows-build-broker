@@ -44,6 +44,16 @@ jobs:
           INPUT_7: ${{ secrets.INPUT_7 }}
           INPUT_8: ${{ secrets.INPUT_8 }}
           INPUT_9: ${{ secrets.INPUT_9 }}
+          INPUT_10: ${{ secrets.INPUT_10 }}
+          INPUT_11: ${{ secrets.INPUT_11 }}
+          INPUT_12: ${{ secrets.INPUT_12 }}
+          INPUT_13: ${{ secrets.INPUT_13 }}
+          INPUT_14: ${{ secrets.INPUT_14 }}
+          INPUT_15: ${{ secrets.INPUT_15 }}
+          INPUT_16: ${{ secrets.INPUT_16 }}
+          INPUT_17: ${{ secrets.INPUT_17 }}
+          INPUT_18: ${{ secrets.INPUT_18 }}
+          INPUT_19: ${{ secrets.INPUT_19 }}
           INPUT_SHA256: ${{ secrets.INPUT_SHA256 }}
           OUTPUT_KEY: ${{ secrets.OUTPUT_KEY }}
           PYTHONUTF8: '1'

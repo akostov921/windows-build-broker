@@ -39,6 +39,7 @@ def build(source,key,output):
    deadline=time.monotonic()+900
    for i,step in enumerate(plan['steps']):
     command=[part.replace('{PYTHON}',sys.executable).replace('{NSIS}',str(Path(os.environ.get('ProgramFiles(x86)','C:/Program Files (x86)'))/'NSIS/makensis.exe')) for part in step]
+    if not Path(command[0]).is_absolute() and ('/' in command[0] or '\\' in command[0]):command[0]=str(app/command[0])
     with (logs/f'step-{i}.log').open('wb') as log:
      remaining=deadline-time.monotonic()
      if remaining<=0:raise TimeoutError('Total build time limit reached')
